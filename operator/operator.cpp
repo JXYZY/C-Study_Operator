@@ -5,7 +5,12 @@
 
 TimeTest::TimeTest()
 {
-	
+	std::cout << "test explicit" << std::endl;
+}
+//测试explicit
+TimeTest::TimeTest(int hour)
+{
+	m_hour = hour;
 }
 
 TimeTest::TimeTest(int hour, int minutes)
@@ -68,6 +73,9 @@ int main()
 	std::cout << "total2 hour:" << total2.getHour() << " " << "total2 minutes:" << total2.getMinutes() << std::endl;
 	std::cout << "Hello CMake。" << std::endl;
 	std::cout << t1;
+	//测试explicit
+	TimeTest t3;
+	//t3 = 5;
 	getchar();
 	return 0;
 }
