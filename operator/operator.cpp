@@ -62,6 +62,14 @@ void operator<<(std::ostream & os, const TimeTest& t)
 	os << t.m_hour << "hour " << t.m_minutes << "minutes";
 }
 #endif
+#if 1
+//转换函数
+TimeTest::operator int()
+{
+	return m_hour;
+}
+#endif
+
 
 int main()
 {
@@ -76,6 +84,9 @@ int main()
 	//测试explicit
 	TimeTest t3;
 	//t3 = 5;
+	//测试转换函数，转换函数只能在类内部去声明
+	int hour = t1;
+	std::cout << "t1 hour:" << hour << std::endl;
 	getchar();
 	return 0;
 }

@@ -16,8 +16,10 @@ public:
 	~TimeTest();
 	int getHour() { return m_hour; }
 	int getMinutes() { return m_minutes; }
-
 	TimeTest operator+(const TimeTest&);
+	//转换函数
+	operator int();
+	//operator double();
 
 	
 
