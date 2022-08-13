@@ -4,24 +4,27 @@
 #pragma once
 
 #include <iostream>
-
-class Time
+//using namespace std;
+class TimeTest
 {
 public:
-	Time();
-	Time(int hour,int minutes);
-	~Time();
+	TimeTest();
+	TimeTest(int hour,int minutes);
+	~TimeTest();
 	int getHour() { return m_hour; }
 	int getMinutes() { return m_minutes; }
 
-	Time operator+(const Time&);
+	TimeTest operator+(const TimeTest&);
+
+	
 
 private:
 	int m_hour;
 	int m_minutes;
-
-	friend Time operator*(int cal, const Time&);
-
+	
+	friend TimeTest operator*(int cal, const TimeTest&);
+	//friend std::ostream & operator<<(std::ostream &, const TimeTest& t);
+	friend void operator<<(std::ostream &, const TimeTest& t);
 };
 
 // TODO: 在此处引用程序需要的其他标头。
