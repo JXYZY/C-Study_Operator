@@ -11,6 +11,7 @@ TimeTest::TimeTest()
 TimeTest::TimeTest(int hour)
 {
 	m_hour = hour;
+	m_minutes = 20;
 }
 
 TimeTest::TimeTest(int hour, int minutes)
@@ -83,7 +84,12 @@ int main()
 	std::cout << t1;
 	//测试explicit
 	TimeTest t3;
-	//t3 = 5;
+	t3 = 5;
+	int test = 5;
+	TimeTest t4 = test;
+	TimeTest total3 = t3 + t4;
+	std::cout << "total3 hour:" << total3.getHour() << " " << "total3 minutes:" << total3.getMinutes() << std::endl;
+	
 	//测试转换函数，转换函数只能在类内部去声明
 	int hour = t1;
 	std::cout << "t1 hour:" << hour << std::endl;

@@ -10,8 +10,8 @@ class TimeTest
 public:
 	TimeTest();
 	//测试explicit
-	//TimeTest(int hour);
-	explicit TimeTest(int hour);  //这种构造函数有一个形参，或者一个形参，其他形参默认值的情况，最好用explicit关闭隐示转换
+	TimeTest(int hour);
+	//explicit TimeTest(int hour);  //这种构造函数有一个形参，或者一个形参，其他形参默认值的情况，最好用explicit关闭隐示转换
 	TimeTest(int hour,int minutes);
 	~TimeTest();
 	int getHour() { return m_hour; }
