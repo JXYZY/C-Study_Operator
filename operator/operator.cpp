@@ -14,6 +14,18 @@ TimeTest::TimeTest(int hour)
 	m_minutes = 20;
 }
 
+TimeTest::TimeTest(const TimeTest&)
+{
+	std::cout << "调用拷贝构造" << std::endl;
+}
+
+TimeTest TimeTest::operator=(const TimeTest& t)
+{
+	TimeTest ts = NULL;
+	std::cout << "调用赋值构造" << std::endl;
+	return ts;
+}
+
 TimeTest::TimeTest(int hour, int minutes)
 	:m_hour(hour)
 	,m_minutes(minutes)
@@ -84,9 +96,12 @@ int main()
 	std::cout << t1;
 	//测试explicit
 	TimeTest t3;
+	//先隐式调用一个参数的构造，构造临时对象，再调用赋值构造
 	t3 = 5;
 	int test = 5;
+	//下面两种都调用带有一个参数的构造函数
 	TimeTest t4 = test;
+	TimeTest t7(test);
 	TimeTest total3 = t3 + t4;
 	std::cout << "total3 hour:" << total3.getHour() << " " << "total3 minutes:" << total3.getMinutes() << std::endl;
 	
